@@ -2,7 +2,7 @@ import React from "react"
 
 
 
-function Grid({ users }) {
+function Grid({users}) {
     function formatDate(date) {
         const dateArray = date.split("-");
         const year = dateArray[0];
@@ -12,7 +12,7 @@ function Grid({ users }) {
         const formattedDate = [month, day, year].join("-");
         return formattedDate;
       }
-      return (   
+      return (
         <tbody>
           {users[0] !== undefined && users[0].name !== undefined ? (
             users.map(({ login, name, picture, phone, email, dob }) => {
@@ -43,7 +43,7 @@ function Grid({ users }) {
               );
             })
           ) : (
-            <>No Info Available</>
+            <></>
           )}
         </tbody>
       );

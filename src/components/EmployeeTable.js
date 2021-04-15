@@ -36,7 +36,7 @@ return(
 
 
 
-<Grid users = {users} ></Grid>
+<Grid users = {users}/>
 </table>
 </div>
 )
