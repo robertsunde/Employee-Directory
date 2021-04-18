@@ -3,10 +3,6 @@ import Grid from "./Grid"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-
-
-
-
 function EmployeeTable({ users, headings, handleFilter }) {
 
 return(
@@ -16,9 +12,9 @@ return(
             {headings.map(({ name }) => {
               return (
                 <div
-                  className="col-2"
+                  className="col-2 text-center"
                   key={name}
-                
+                style={{cursor: "pointer"}}
                   onClick={() => {
                     handleFilter(name.toLowerCase());
                   }}

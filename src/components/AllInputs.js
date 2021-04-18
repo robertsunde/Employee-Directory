@@ -15,10 +15,8 @@ filteredUsers: [{}],
 }
 headings = [
 
-    { name: "Image", width: "20%" },
-    { name: "Name", width: "20%" },
-    { name: "Phone", width: "20%" },
-    { name: "Email", width: "20%" },
+    { name: "Name", width: "20%"}
+
   ]
 
 
