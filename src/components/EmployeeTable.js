@@ -1,5 +1,7 @@
 import React from "react"
 import Grid from "./Grid"
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 
 
@@ -11,12 +13,12 @@ return(
 <div>
 <div className="row">
           <div className="col-12">
-            {headings.map(({ name, width }) => {
+            {headings.map(({ name }) => {
               return (
                 <div
-                  className="col"
+                  className="col-2"
                   key={name}
-                  style={{ width }}
+                
                   onClick={() => {
                     handleFilter(name.toLowerCase());
                   }}
