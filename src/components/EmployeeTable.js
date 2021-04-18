@@ -9,12 +9,11 @@ function EmployeeTable({ users, headings, handleFilter }) {
 
 return(
 <div>
-<table>
-<thead>
-          <tr>
+<div className="row">
+          <div className="col-12">
             {headings.map(({ name, width }) => {
               return (
-                <th
+                <div
                   className="col"
                   key={name}
                   style={{ width }}
@@ -24,11 +23,11 @@ return(
                 >
                   {name}
                   <span className="pointer"></span>
-                </th>
+                </div>
               );
             })}
-          </tr>
-        </thead>
+          </div>
+        </div>
 
 
 
@@ -37,9 +36,13 @@ return(
 
 
 <Grid users = {users}/>
-</table>
 </div>
 )
 }
+
+
+
+
+
 
 export default EmployeeTable
