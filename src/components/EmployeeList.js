@@ -1,9 +1,9 @@
 import React from "react"
-import Grid from "./Grid"
+import Employees from "./Employees"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-function EmployeeTable({ users, headings, handleFilter }) {
+function EmployeeList({ users, headings, handleFilter }) {
 
 return(
 <div>
@@ -33,7 +33,7 @@ return(
 
 
 
-<Grid users = {users}/>
+<Employees users = {users}/>
 </div>
 )
 }
@@ -43,4 +43,4 @@ return(
 
 
 
-export default EmployeeTable
+export default EmployeeList

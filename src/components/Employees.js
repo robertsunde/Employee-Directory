@@ -1,8 +1,8 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-
-function Grid({ users }) {
+//////////////////////////////////////////////////////////  ADD ALL OF THIS INTO EMPLOYEE TABLE PAGE TO ELIMINATE THIS PAGE. DO NOT FORGET.
+function Employees({ users }) {
   return (
         
     <div>
@@ -73,4 +73,4 @@ function Grid({ users }) {
 
 
 
-export default Grid
+export default Employees

@@ -1,7 +1,7 @@
 import React from "react"
 import API from "../api/api"
 import Searchbar from "./Searchbar"
-import EmployeeTable from "./EmployeeTable"
+import EmployeeList from "./EmployeeList"
 
 
 
@@ -116,7 +116,7 @@ handleFilter = heading => {
         return(
         <>
         <Searchbar handlesearch = {this.handlesearch}/>
-        <EmployeeTable 
+        <EmployeeList 
         headings = {this.headings}
         users = {this.state.filteredUsers}
         handleFilter = {this.handleFilter}
