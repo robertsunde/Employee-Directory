@@ -13,7 +13,7 @@ console.log(API.findEmployees());
 
 render(){
 return(
-<><h1 style={{textAlign:"center"}}>Employee Directory</h1></>
+<><h2 style={{textAlign:"center"}}>Employee Directory</h2></>
 
 
 
