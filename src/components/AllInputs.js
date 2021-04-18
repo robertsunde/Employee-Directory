@@ -36,6 +36,9 @@ handlesearch = filtered => {console.log(filtered.target.value);
 
 
         
+/////////////////////////////////////////////////////////////
+// FUNCTION FOR SORTING EMPLOYEES ASCENDING/DESCENDING
+////////////////////////////////////////////////////////////
         
 handleFilter = heading => {
     if (this.state.order === "descend") {
@@ -75,17 +78,16 @@ handleFilter = heading => {
 
 
 
-
-
+////////////////////////////////////////////////////////////////////////////
+// API CALL
+/////////////////////////////////////////////////////////////////////////////
   componentDidMount(){
-    // ajax calls go here
     API.findEmployees().then(results=>{
     
     this.setState({
     users: results.data.results, 
     filteredUsers: results.data.results
-    
-    
+     
     })
     })
     
