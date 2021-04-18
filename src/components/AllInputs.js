@@ -22,8 +22,8 @@ headings = [
 
 
 //can change e
-handlesearch = e => {console.log(e.target.value);
-    const value = e.target.value;
+handlesearch = filtered => {console.log(filtered.target.value);
+    const value = filtered.target.value;
     const currentList = this.state.users.filter(item => {
       // merge data together, then see if user input is anywhere inside
       let values = Object.values(item)
@@ -47,30 +47,23 @@ handleFilter = heading => {
         order: "descend"
       })
     }
-    const compareFnc = (a, b) => {
+    const compareFnc = (a, z) => {
       if (this.state.order === "ascend") {
         if (a[heading] === undefined) {
           return 1;
-        } else if (b[heading] === undefined) {
+        } else if (z[heading] === undefined) {
           return -1;
         }
         else if (heading === "name") {
-          return a[heading].first.localeCompare(b[heading].first);
+          return a[heading].first.localeCompare(z[heading].first);
         } else {
-          return a[heading] - b[heading];
+          return a[heading] - z[heading];
         }
       } else {
-        // account for missing values
-        if (a[heading] === undefined) {
-          return 1;
-        } else if (b[heading] === undefined) {
-          return -1;
-        }
-        // numerically
-        else if (heading === "name") {
-          return b[heading].first.localeCompare(a[heading].first);
+         if (heading === "name") {
+          return z[heading].first.localeCompare(a[heading].first);
         } else {
-          return b[heading] - a[heading];
+          return z[heading] - a[heading];
         }
       }
     }
@@ -82,18 +75,6 @@ handleFilter = heading => {
 
 
 
-  handleSearch = e => {
-    console.log(e.target.value);
-    const value = e.target.value;
-    const currentList = this.state.users.filter(item => {
-      // merge data together, then see if user input is anywhere inside
-      let values = Object.values(item)
-        .join("")
-        .toLowerCase();
-      return values.indexOf(value.toLowerCase()) !== -1;
-    });
-    this.setState({ filteredUsers: currentList });
-  }
 
 
   componentDidMount(){
@@ -111,6 +92,9 @@ handleFilter = heading => {
     
     }
 
+//////////////////////////////////////////////////////////
+// RENDERS THIS ON THE PAGE
+//////////////////////////////////////////////////////////
 
         render(){
         return(
@@ -121,13 +105,7 @@ handleFilter = heading => {
         users = {this.state.filteredUsers}
         handleFilter = {this.handleFilter}
          />
-        
-        
-        
-        
         </>
-        
-        
         
         )
         }

@@ -10,7 +10,6 @@ componentDidMount(){
 console.log(API.findEmployees());
 }
 
-
 render(){
 return(
 <><h2 style={{textAlign:"center"}}>Employee Directory</h2></>
