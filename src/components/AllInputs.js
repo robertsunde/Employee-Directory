@@ -1,30 +1,25 @@
 import React from "react"
-import API from "../api/api"
 import Searchbar from "./Searchbar"
 import EmployeeList from "./EmployeeList"
+import API from "../api/api"
 
 
 
 export default class Header extends React.Component{
 state = {
-users: [{}],
-order: "descend",
+order: "descending",
+employee: [{}],
 filteredUsers: [{}],
-
-
 }
-headings = [
-
-    { name: "Name", width: "20%"}
-
+sortArray = [
+    { name: "Name"}
   ]
 
 
 
-//can change e
-handlesearch = filtered => {console.log(filtered.target.value);
+employeesearch = filtered => {console.log(filtered.target.value);
     const value = filtered.target.value;
-    const currentList = this.state.users.filter(item => {
+    const currentList = this.state.employee.filter(item => {
       // merge data together, then see if user input is anywhere inside
       let values = Object.values(item)
         .join("")
@@ -39,29 +34,37 @@ handlesearch = filtered => {console.log(filtered.target.value);
 /////////////////////////////////////////////////////////////
 // FUNCTION FOR SORTING EMPLOYEES ASCENDING/DESCENDING
 ////////////////////////////////////////////////////////////
-        
+
 handleFilter = heading => {
-    if (this.state.order === "descend") {
+    if (this.state.order === "descending") {
       this.setState({
-        order: "ascend"
+        order:"ascending"
       })
     } else {
       this.setState({
-        order: "descend"
+        order:"descending"
       })
     }
+
+
+  ///////////////////////////////////////////////////////////
+  // IF/ELSE FOR SORT FUNCTIONALITY
+  //////////////////////////////////////////////////////////
+
     const compareFnc = (a, z) => {
-      if (this.state.order === "ascend") {
+      if (this.state.order === "ascending") {
         if (a[heading] === undefined) {
           return 1;
         } else if (z[heading] === undefined) {
           return -1;
         }
+
         else if (heading === "name") {
           return a[heading].first.localeCompare(z[heading].first);
         } else {
           return a[heading] - z[heading];
         }
+
       } else {
          if (heading === "name") {
           return z[heading].first.localeCompare(a[heading].first);
@@ -85,7 +88,7 @@ handleFilter = heading => {
     API.findEmployees().then(results=>{
     
     this.setState({
-    users: results.data.results, 
+    employee: results.data.results, 
     filteredUsers: results.data.results
      
     })
@@ -101,10 +104,10 @@ handleFilter = heading => {
         render(){
         return(
         <>
-        <Searchbar handlesearch = {this.handlesearch}/>
+        <Searchbar employeesearch = {this.employeesearch}/>
         <EmployeeList 
-        headings = {this.headings}
-        users = {this.state.filteredUsers}
+        sortArray = {this.sortArray}
+        employee = {this.state.filteredUsers}
         handleFilter = {this.handleFilter}
          />
         </>

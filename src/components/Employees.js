@@ -2,12 +2,12 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //////////////////////////////////////////////////////////  ADD ALL OF THIS INTO EMPLOYEE TABLE PAGE TO ELIMINATE THIS PAGE. DO NOT FORGET.
-function Employees({ users }) {
+function Employees({ employee }) {
   return (
         
     <div>
-    {users[0] !== undefined && users[0].name !== undefined ? (
-      users.map(({ login, name, picture, phone, email}) => {
+    {employee[0] !== undefined && employee[0].name !== undefined ? (
+      employee.map(({ login, name, picture, phone, email}) => {
         return (
           <div key={login.uuid}>
             <div data-th="Image" className="col-12 text-center" style={{marginLeft: ".5cm", marginRight: ".5cm", marginTop:"2cm", padding: "0cm" }}>

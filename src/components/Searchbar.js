@@ -2,7 +2,7 @@ import React from "react"
 
 
 
-function Searchbar({ handlesearch }) {
+function Searchbar({ employeesearch }) {
     return (
         <nav className="nav-bar">
             <div>
@@ -10,10 +10,10 @@ function Searchbar({ handlesearch }) {
 <input
 className = "form-control"
 type = "search"
-placeholder = "Find An Employee"
-onChange = {e=>handlesearch(e)}
+ style = {{float: "right", width: "50vw", marginLeft: "1cm", marginRight: "1cm"}}
+  placeholder = "Search for an employee by name!"
+onChange = {searchs=>employeesearch(searchs)}
 />
-
 
 
                 </form>

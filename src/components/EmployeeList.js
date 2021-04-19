@@ -3,18 +3,18 @@ import Employees from "./Employees"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-function EmployeeList({ users, headings, handleFilter }) {
+function EmployeeList({ employee, sortArray, handleFilter }) {
 
 return(
 <div>
 <div className="row">
           <div className="col-12">
-            {headings.map(({ name }) => {
+            {sortArray.map(({ name }) => {
               return (
                 <div
-                  className="col-2 text-center"
+                  className="col-12 text-center"
                   key={name}
-                style={{cursor: "pointer"}}
+                style={{cursor: "pointer", alignItems: "center"}}
                   onClick={() => {
                     handleFilter(name.toLowerCase());
                   }}
@@ -33,7 +33,7 @@ return(
 
 
 
-<Employees users = {users}/>
+<Employees employee = {employee}/>
 </div>
 )
 }
