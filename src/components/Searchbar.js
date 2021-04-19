@@ -8,7 +8,7 @@ function Searchbar({ employeesearch }) {
             <div>
                 <form>
 <input
-className = "form-control"
+className = "form-control btn-light"
 type = "search"
  style = {{float: "right", width: "50vw", marginLeft: "1cm", marginRight: "1cm"}}
   placeholder = "Search for an employee by name!"
