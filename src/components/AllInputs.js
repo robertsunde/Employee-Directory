@@ -9,25 +9,27 @@ export default class Header extends React.Component{
 state = {
 order: "descending",
 employee: [{}],
-filteredUsers: [{}],
+sortedEmployees: [{}],
 }
+
 sortArray = [
     { name: "Name"}
   ]
 
-
+/////////////////////////////////////////////////////////////////
+// FUNCTION FOR SEARCHING FOR EMPLOYEE BY NAME IN DATABASE
+/////////////////////////////////////////////////////////////////
 
 employeesearch = filtered => {console.log(filtered.target.value);
-    const value = filtered.target.value;
+    const letter = filtered.target.value;
     const currentList = this.state.employee.filter(item => {
-      // merge data together, then see if user input is anywhere inside
-      let values = Object.values(item)
+      let letters = Object.values(item)
         .join("")
         .toLowerCase();
-      return values.indexOf(value.toLowerCase()) !== -1;
+      return letters.indexOf(letter.toLowerCase()) !== -1;
     });
-    this.setState({ filteredUsers: currentList });}
-//can change filtered userrs
+    this.setState({ sortedEmployees: currentList });}
+
 
 
         
@@ -73,8 +75,8 @@ handleFilter = heading => {
         }
       }
     }
-    const sortedUsers = this.state.filteredUsers.sort(compareFnc);
-    this.setState({ filteredUsers: sortedUsers });
+    const sortedUsers = this.state.sortedEmployees.sort(compareFnc);
+    this.setState({ sortedEmployees: sortedUsers });
   }
 
 
@@ -89,7 +91,7 @@ handleFilter = heading => {
     
     this.setState({
     employee: results.data.results, 
-    filteredUsers: results.data.results
+    sortedEmployees: results.data.results
      
     })
     })
@@ -107,7 +109,7 @@ handleFilter = heading => {
         <Searchbar employeesearch = {this.employeesearch}/>
         <EmployeeList 
         sortArray = {this.sortArray}
-        employee = {this.state.filteredUsers}
+        employee = {this.state.sortedEmployees}
         handleFilter = {this.handleFilter}
          />
         </>
