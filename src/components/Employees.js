@@ -5,11 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function Employees({ employee }) {
   return (
         
+    
     <div>
-    {employee[0] !== undefined && employee[0].name !== undefined ? (
-      employee.map(({ login, name, picture, phone, email}) => {
+    {employee[0] !== undefined && employee[0].email !== undefined ? (
+      employee.map(({ id, name, picture, phone, email}) => {
         return (
-          <div key={login.uuid}>
+          <div key={id.value}>
             <div className="col-12 text-center" style={{marginLeft: ".5cm", marginRight: ".5cm", marginTop:"2cm", padding: "0cm" }}>
               <img
                 src={picture.medium}
