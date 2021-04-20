@@ -19,6 +19,9 @@ return(
                     handleFilter(name.toLowerCase());
                   }}
                 >
+                <p>Click below to sort by:
+                </p>
+
                  {name}
 
                 </div>

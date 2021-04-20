@@ -1,5 +1,5 @@
 import React from "react"
-import Searchbar from "./Searchbar"
+import Searchbar from "./SearchName"
 import EmployeeList from "./EmployeeList"
 import API from "../api/api"
 
