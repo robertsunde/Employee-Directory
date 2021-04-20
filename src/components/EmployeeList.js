@@ -19,8 +19,8 @@ return(
                     handleFilter(name.toLowerCase());
                   }}
                 >
-                  {name}
-                  <span className="pointer"></span>
+                 {name}
+
                 </div>
               );
             })}

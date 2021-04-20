@@ -12,9 +12,6 @@ employee: [{}],
 sortedEmployees: [{}],
 }
 
-sortArray = [
-    { name: "Name"}
-  ]
 
 /////////////////////////////////////////////////////////////////
 // FUNCTION FOR SEARCHING FOR EMPLOYEE BY NAME IN DATABASE
@@ -37,7 +34,7 @@ employeesearch = filtered => {console.log(filtered.target.value);
 // FUNCTION FOR SORTING EMPLOYEES ASCENDING/DESCENDING
 ////////////////////////////////////////////////////////////
 
-handleFilter = heading => {
+handleFilter = nameSort => {
     if (this.state.order === "descending") {
       this.setState({
         order:"ascending"
@@ -53,29 +50,29 @@ handleFilter = heading => {
   // IF/ELSE FOR SORT FUNCTIONALITY
   //////////////////////////////////////////////////////////
 
-    const compareFnc = (a, z) => {
+    const checkorder = (a, z) => {
       if (this.state.order === "ascending") {
-        if (a[heading] === undefined) {
+        if (a[nameSort] === undefined) {
           return 1;
-        } else if (z[heading] === undefined) {
+        } else if (z[nameSort] === undefined) {
           return -1;
         }
 
-        else if (heading === "name") {
-          return a[heading].first.localeCompare(z[heading].first);
+        else if (nameSort === "name") {
+          return a[nameSort].first.localeCompare(z[nameSort].first);
         } else {
-          return a[heading] - z[heading];
+          return a[nameSort] - z[nameSort];
         }
 
       } else {
-         if (heading === "name") {
-          return z[heading].first.localeCompare(a[heading].first);
+         if (nameSort === "name") {
+          return z[nameSort].first.localeCompare(a[nameSort].first);
         } else {
-          return z[heading] - a[heading];
+          return z[nameSort] - a[nameSort];
         }
       }
     }
-    const sortedUsers = this.state.sortedEmployees.sort(compareFnc);
+    const sortedUsers = this.state.sortedEmployees.sort(checkorder);
     this.setState({ sortedEmployees: sortedUsers });
   }
 
@@ -116,4 +113,14 @@ handleFilter = heading => {
         
         )
         }
+
+
+/////////////////////////////////////////////////////////
+// "Name" button for sorting by employee name
+/////////////////////////////////////////////////////////
+
+        sortArray = [
+          { name: "Name"}
+        ]
+      
         }
