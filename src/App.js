@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "./components/Header"
-import AllInputs from "./components/AllInputs"
+import AllInputs from "./components/MainPage"
 // import './App.css';
 
 function App() {

@@ -7,7 +7,7 @@ import API from "../api/api"
 
 export default class Header extends React.Component{
 state = {
-order: "descending",
+order: "ascending",
 email:[{}],
 employee: [{}],
 sortedEmployees: [{}],
