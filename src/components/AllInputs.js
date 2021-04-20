@@ -1,5 +1,5 @@
 import React from "react"
-import Searchbar from "./SearchName"
+import SearchName from "./SearchName"
 import EmployeeList from "./EmployeeList"
 import API from "../api/api"
 
@@ -8,6 +8,7 @@ import API from "../api/api"
 export default class Header extends React.Component{
 state = {
 order: "descending",
+email:[{}],
 employee: [{}],
 sortedEmployees: [{}],
 }
@@ -22,6 +23,22 @@ employeesearch = filtered => {console.log(filtered.target.value);
     const currentList = this.state.employee.filter(item => {
       let letters = Object.values(item)
         .join("")
+        .toLowerCase();
+      return letters.indexOf(letter.toLowerCase()) !== -1;
+    });
+    this.setState({ sortedEmployees: currentList });}
+
+
+
+        
+/////////////////////////////////////////////////////////////////
+// FUNCTION FOR SEARCHING FOR EMPLOYEE BY EMAIL IN DATABASE
+/////////////////////////////////////////////////////////////////
+
+emailsearch = filtered => {console.log(filtered.target.value);
+    const letter = filtered.target.value;
+    const currentList = this.state.email.filter(item => {
+      let letters = Object.values(item)
         .toLowerCase();
       return letters.indexOf(letter.toLowerCase()) !== -1;
     });
@@ -88,6 +105,7 @@ handleFilter = nameSort => {
     
     this.setState({
     employee: results.data.results, 
+    email:results.data.results,
     sortedEmployees: results.data.results
      
     })
@@ -96,6 +114,17 @@ handleFilter = nameSort => {
     
     }
 
+
+
+/////////////////////////////////////////////////////////
+// "Name" button for sorting by employee name
+/////////////////////////////////////////////////////////
+
+sortArray = [
+  { name: "Name"}
+]
+
+
 //////////////////////////////////////////////////////////
 // RENDERS THIS ON THE PAGE
 //////////////////////////////////////////////////////////
@@ -103,10 +132,11 @@ handleFilter = nameSort => {
         render(){
         return(
         <>
-        <Searchbar employeesearch = {this.employeesearch}/>
+        <SearchName employeesearch = {this.employeesearch}/>
         <EmployeeList 
         sortArray = {this.sortArray}
         employee = {this.state.sortedEmployees}
+        email = {this.state.sortedEmployees}
         handleFilter = {this.handleFilter}
          />
         </>
@@ -114,13 +144,4 @@ handleFilter = nameSort => {
         )
         }
 
-
-/////////////////////////////////////////////////////////
-// "Name" button for sorting by employee name
-/////////////////////////////////////////////////////////
-
-        sortArray = [
-          { name: "Name"}
-        ]
-      
         }

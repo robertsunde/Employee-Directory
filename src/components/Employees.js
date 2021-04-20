@@ -13,7 +13,7 @@ function Employees({ employee }) {
           <div key={id.value}>
             <div className="col-12 text-center" style={{marginLeft: ".5cm", marginRight: ".5cm", marginTop:"2cm", padding: "0cm" }}>
               <img
-                src={picture.medium}
+                src={picture.large}
                 alt={""}
                 className="img-responsive"
               />

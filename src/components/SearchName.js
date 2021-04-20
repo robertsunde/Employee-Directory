@@ -1,22 +1,26 @@
 import React from "react"
 
 
+//////////////////////////////////////////////////////////
+// SearchName FUNCTION FOR RENDERING SEARCHES IN LIST FORM
+/////////////////////////////////////////////////////////
 
-function Searchbar({ employeesearch }) {
+function SearchName({ employeesearch }) {
     return (
         <nav className="nav-bar">
             <div>
-                <form>
+                <div>
 <input
 className = "form-control btn-light"
 type = "search"
- style = {{float: "right", width: "50vw", marginLeft: "1cm", marginRight: "1cm"}}
-  placeholder = "Search for an employee by name!"
 onChange = {searchs=>employeesearch(searchs)}
+ style = {{float: "right", width: "50vw", marginLeft: "1cm", marginRight: "1cm"}}
+  placeholder = "Search for an employee by name, email, or phone#!"
+
 />
 
 
-                </form>
+                </div>
 
 
 
@@ -28,8 +32,5 @@ onChange = {searchs=>employeesearch(searchs)}
 
 
 
-
-
-
 }
-export default Searchbar
+export default SearchName

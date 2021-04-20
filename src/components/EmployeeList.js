@@ -9,26 +9,30 @@ return(
 <div>
 <div className="row">
           <div className="col-12">
+
+{/* Sorts employees */}
+
             {sortArray.map(({ name }) => {
               return (
                 <div
-                  className="col-12 text-center"
                   key={name}
-                style={{cursor: "pointer", alignItems: "center"}}
+                  className="col-12 text-center"
+                  style={{cursor: "pointer", alignItems: "center"}}
                   onClick={() => {
                     handleFilter(name.toLowerCase());
                   }}
                 >
+
                 <p>Click below to sort by:
                 </p>
-
                  {name}
-
                 </div>
               );
-            })}
-          </div>
-        </div>
+        })}
+
+</div>
+
+</div>
 
 
 
