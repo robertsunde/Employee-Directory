@@ -24,9 +24,7 @@ return(
                   }}
                 >
 
-                <p>Click below to sort by:
-                </p>
-                 {name}
+                <p className="header">Click below to sort by:</p>{name}
                 </div>
               );
         })}

@@ -10,6 +10,7 @@ function SearchName({ employeesearch }) {
         <nav className="nav-bar">
             <div>
                 <div>
+                
 <input
 className = "form-control btn-light"
 type = "search"
