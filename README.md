@@ -21,7 +21,8 @@ This application does not require an installation, and can be accessed over the 
 <br/>
 <br/>
 ## Usage <br/>
-To use, visit the link listed above under the installation section. Upon loading, the user will be greeted with a homepage as shown below that contains all employees brought in by the API and displays them in a list form. Next, the user can either click the "Name" text that is circled in blue in the above picture if they would like to sort the employees alphabetically. Lastly, the user can enter a name, email, or phone number in the text input circled in red in the above picture if they would like to search using this criteria. The user can refresh the page if they would like a new list of employees pulled in using the API. <br/>
+To use, visit the link listed above under the installation section. Upon loading, the user will be greeted with a homepage as shown below that contains all employees brought in by the API and displays them in a list form. </br> ![InkedEmployee-Directory Homepage](https://user-images.githubusercontent.com/73792987/115643213-552d2100-a2ea-11eb-8e48-4e272c4df821.jpg) </br>
+ Next, the user can either click the "Name" text that is circled in blue in the above picture if they would like to sort the employees alphabetically. Lastly, the user can enter a name, email, or phone number in the text input circled in red in the above picture if they would like to search using this criteria. The user can refresh the page if they would like a new list of employees pulled in using the API. <br/>
 <br/>
 <br/>
 ## License <br/>
@@ -36,7 +37,7 @@ Copyright 2021 robertsunde
 <br/>
 <br/>
 ## Contributions <br/>
-w3schools.com </br> https://reactjs.org/ </br> https://react-bootstrap.github.io/ </br> stackoverflow.com </br> <br/>
+https://w3schools.com </br> https://reactjs.org/ </br> https://react-bootstrap.github.io/ </br> https://stackoverflow.com </br> <br/>
 <br/>
 <br/>
 ## Tests <br/>
